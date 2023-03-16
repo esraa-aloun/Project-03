@@ -3,18 +3,46 @@
 
 <h1>profile form</h1>
 
-<form method="post" action="{% url 'profile' %}">
+<form method="post" action="{% url 'saveprofile' %}">
     {% csrf_token %} 
     <table>
         {{ form.as_table }}
 
     </table>
+     <input type="radio" id="student" name="userRole" value="student" checked >
+     <label for="student">Student</label><br>
+     <label>Age</label>
+     <input type="number" name="age">
+     <br>
+     <label>Gender</label>
+     <select name="gender">
+        <option value="female">Female</option>
+        <option value="male">male</option>
+    </select>
+    <br>
+    <br>
+    <br>
+     
+     <input type="radio" id="instructor" name="userRole" value="instructor">
+     <label for="instructor">instructor</label><br>  
+     <br>
+     <label>Age</label>
+     <input type="number" name="age">
+     <br>
+     <label>Gender</label>
+     <select name="gender">
+        <option value="female">Female</option>
+        <option value="male">male</option>
+    </select>   
+    <br>
+    <label>Category</label>
+    <!-- should be multiple select -->
+    <select>
 
-      <input type="radio" id="instructor" name="fav_language" value="instructor">
-      <label for="instructor">instructor</label><br>
-      <input type="radio" id="student" name="fav_language" value="student">
-      <label for="student">CSS</label><br>
-
+    </select>
+    <br>
+    <label>Certification</label>
+    <br>
     <input type="submit" class="btn" value="submit">
 </form>
 
