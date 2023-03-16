@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>profile form</h1>
+
+<form method="post" action="{% url 'profile' %}">
+    {% csrf_token %} 
+    <table>
+        {{ form.as_table }}
+
+    </table>
+
+      <input type="radio" id="instructor" name="fav_language" value="instructor">
+      <label for="instructor">instructor</label><br>
+      <input type="radio" id="student" name="fav_language" value="student">
+      <label for="student">CSS</label><br>
+
+    <input type="submit" class="btn" value="submit">
+</form>
+
+
+{% endblock %}
